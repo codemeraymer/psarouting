@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSA Document Routing System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Philippine Statistics Authority</h1>
+            <h2>Document Routing System</h2>
+        </header>
+        
+        <nav id="main-nav">
+            <button id="nav-toggle"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="#" data-page="login" class="active">Login</a></li>
+                <li><a href="#" data-page="signup">Sign Up</a></li>
+                <li><a href="#" data-page="dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            <!-- Login Section -->
+            <section id="login" class="page active">
+                <h3>Login</h3>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email:</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
+
+            <!-- Signup Section -->
+            <section id="signup" class="page">
+                <h3>Sign Up</h3>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email:</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password:</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="page">
+                <h3>Dashboard</h3>
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h4>Route New Document</h4>
+                        <form id="routeDocumentForm">
+                            <div class="form-group">
+                                <label for="from">From:</label>
+                                <input type="text" id="from" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="to">To:</label>
+                                <input type="text" id="to" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject:</label>
+                                <input type="text" id="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="action">Action Needed:</label>
+                                <select id="action" required>
+                                    <option value="">Select action</option>
+                                    <option value="For appropriate action">For appropriate action</option>
+                                    <option value="For comments">For comments</option>
+                                    <option value="For consideration">For consideration</option>
+                                    <option value="For initial/signature">For initial/signature</option>
+                                    <option value="For information/file">For information/file</option>
+                                    <option value="For drafting of reply">For drafting of reply</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="remarks">Remarks/Notes:</label>
+                                <textarea id="remarks"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="attachment">Attach Document:</label>
+                                <input type="file" id="attachment">
+                            </div>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <h4>Recent Document History</h4>
+                        <div id="documentHistory"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Philippine Statistics Authority. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
